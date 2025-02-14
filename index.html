@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <!--
+
+********COUNTER********
+<label id="countLabel">0</label><br>
+<div id="btnContainer">
+<button id="decreaseBtn" class="buttons">decrease</button>
+<button id="resetBtn"class="buttons">reset</button>
+<button id="increaseBtn"class="buttons">increase</button>
+ </div>
+
+-->
+
+<!--
+
+*********ROLL**********
+<button id="myButton">roll  </button><br>
+<label id="myLabel"></label>
+-->
+
+<!--
+***********RadioButton*************
+<input type="checkbox" id="myCheckbox">
+<label for="myCheckbox">subscribe</label><br><br>
+
+<input type="radio" id="visaBtn" name="card">
+<label for="visaBtn">Visa</label><br>
+
+<input type="radio" id="masterCardBtn" name="card">
+<label for="visaBtn">masterCard</label><br>
+
+<input type="radio" id="PayPalBtn" name="card">
+<label for="PayPalBtn">PayPal</label><br><br>
+
+<button type="submit" id="mySubmit">submit</button>
+
+<p id="subResult"></p>
+<p id="paymentResult"></p>
+
+-->
+
+<!--
+************************TEMPERATURE CONVERSION PROGRAM************************
+<form>
+   <h1>Temperature conversion:</h1>
+   <input type="number" id="textBox" value="0"><br>
+
+   <input type="radio" id="toFahrenheit" name="unit">
+   <label for="toFahrenheit">Celsius ➡ Fahrenheit</label><br>
+
+   <input type="radio" id="toCelsius" name="unit">
+   <label for="toCelsius">Fahrenheit ➡ Celsius</label><br>
+
+   <button type="button" onclick="convert()">submit</button>
+   <p id="result"></p>
+</form>
+-->
+<h1>Intetrest Calculator</h1>
+<form>
+   <label for="principal">Principal Amount:</label>
+   <input type="number" id="principal">
+
+   <label for="rate">Interest Rate:</label>
+   <input type="number" id="rate">
+
+   <label for="years">Years:</label>
+   <input type="number" id="years">
+
+   <button type="button"  onclick="calculate()">submit</button>
+
+   <p id="total">Total: <span id="total-amount">$0.00</span></p>
+</form>
+
+   <script src="index.js"></script>
+</body>
+</html> 
