@@ -99,30 +99,31 @@
 //}
 //********************************************************** */
 
-//***************** */ TEMPERATURE CONVERSION PROGRAM*********************
+/*//*****************  TEMPERATURE CONVERSION PROGRAM*********************
 
-//const textBox = document.getElementById("textBox");
-//const toFahrenheit = document.getElementById("toFahrenheit");
-//const toCelsius = document.getElementById("toCelsius");
-//const result = document.getElementById("result");
-//let temp;
+const textBox = document.getElementById("textBox");
+const toFahrenheit = document.getElementById("toFahrenheit");
+const toCelsius = document.getElementById("toCelsius");
+const result = document.getElementById("result");
+let temp;
 
-//function convert(){
+function convert(){
 
-////if(toFahrenheit.checked){
-//////temp = Number(textBox.value);
-//////temp = temp * 9 / 5 + 32;
-//////result.textContent = temp.toFixed(1) + "°F";
-////}
-////else if(toCelsius.checked){
-//////temp = Number(textBox.value);
-//////temp = (temp - 32) * (5/9);
-//////result.textContent = temp.toFixed(1) + "°C";
-////}
-////else{
-//////result.textContent = "Select a unit";
-////}
-//}
+if(toFahrenheit.checked){
+temp = Number(textBox.value);
+temp = temp * 9 / 5 + 32;
+result.textContent = temp.toFixed(1) + "°F";
+}
+else if(toCelsius.checked){
+temp = Number(textBox.value);
+temp = (temp - 32) * (5/9);
+result.textContent = temp.toFixed(1) + "°C";
+}
+else{
+result.textContent = "Select a unit";
+}
+}
+*/
 
 
 //***********************GET and SET*****************************
@@ -230,7 +231,7 @@
 //                                                    {style:"currency",
 //                                                    currency: "USD"});
 //}
-
+/*
 //*******************CLOCK********************
 function updateClock() {
 
@@ -247,3 +248,61 @@ function updateClock() {
 
 updateClock();
 setInterval(updateClock, 1000);
+
+*/
+
+// ROCK PAPER SCISSORS
+
+const choices = ["rock", "paper", "scissors"];
+const playerDisplay = document.getElementById("playerDisplay");
+const computerDisplay = document.getElementById("computerDisplay");
+const resultDisplay = document.getElementById("resultDisplay");
+const playerScoreDisplay = document.getElementById("playerScoreDisplay");
+const computerScoreDisplay = document.getElementById("computerScoreDisplay");
+let playerScore = 0;
+let computerScore = 0;
+
+function playGame(playerChoice){
+
+    const computerChoice = choices[Math.floor(Math.random() * 3)];
+    let result = "";
+
+    if(playerChoice === computerChoice){
+        result = "IT'S A TIE!";
+    }
+    else{
+        switch(playerChoice){
+            case "rock":
+                result = (computerChoice === "scissors") ? "YOU WIN!" : "YOU LOSE!";
+                break;
+            case "paper":
+                result = (computerChoice === "rock") ? "YOU WIN!" : "YOU LOSE!";
+                break;
+            case "scissors":
+                result = (computerChoice === "paper") ? "YOU WIN!" : "YOU LOSE!";
+                break;
+        }
+    }
+
+    playerDisplay.textContent = `PLAYER: ${playerChoice}`;
+    computerDisplay.textContent = `Computer: ${computerChoice}`;
+    resultDisplay.textContent = result;
+
+    resultDisplay.classList.remove("greenText", "redText");
+
+    switch(result){
+        case "YOU WIN!":
+            resultDisplay.classList.add("greenText");
+            playerScore++;
+            playerScoreDisplay.textContent = playerScore;
+            break;
+        case "YOU LOSE!":
+            resultDisplay.classList.add("redText");
+            computerScore++;
+            computerScoreDisplay.textContent = computerScore;
+            break;
+    }
+}
+
+
+
